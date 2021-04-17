@@ -2,19 +2,19 @@ package com.huatec.hiot_cloud.test.mvptest;
 
 import com.huatec.hiot_cloud.test.mvptest.model.User;
 
-public class TestPresenter {
+import base.BasePresenter;
 
-    private TestView view;
+public class TestPresenter extends BasePresenter<TestView> {
 
-    public TestPresenter(TestView view) {
-        this.view = view;
+    public TestPresenter() {
     }
 
     public void login(User user){
-        if ("zhangyuhui".equals(user.getUserName()) && "123".equals(user.getPassword())){
-            view.showMessage("登录成功");
+        if ("liuchuntong".equals(user.getUserName()) && "123".equals(user.getPassword())){
+            getView().showMessage("登录成功");
         }else {
-            view.showMessage("登录失败");
+            getView().showMessage("登录失败");
         }
     }
+
 }
